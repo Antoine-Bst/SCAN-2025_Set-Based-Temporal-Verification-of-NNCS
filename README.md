@@ -89,9 +89,10 @@ This prototype uses Multilayer Perceptrons (MLP).
   The same activation function must be used in all hidden layers.
 
 * The output set is computed as:
-
+```
   std::vector<Affine2Vector> output =
   DeepNeuralNetwork\_aff(Inputs, ".../weights.txt", ".../biases.txt");
+```
 
 Here, Inputs is a vector of affine forms (std::vector<Affine2Vector>), each corresponding to one input of the neural network.
 
