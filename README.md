@@ -96,9 +96,71 @@ This prototype uses Multilayer Perceptrons (MLP).
 
 Here, Inputs is a vector of affine forms (std::vector<Affine2Vector>), each corresponding to one input of the neural network.
 
+
 ****************
 Image: Reachable tube of a nonlinear car model driven by a Neural Network in closed loop using Dynibex
 <p align="center">
   <img src="NonlinearcarNNCS.png" alt="Nonlinear car NNCS" width="70%">
 </p>
 
+****************
+## Summary of the approach
+
+# Reachability Analysis of NNCS with Activation Functions
+
+Activation functions (such as the **sigmoid**) can be expressed as **ODEs**.
+For example, the sigmoid satisfies:
+
+```
+dσ/dx = σ(x) * (1 - σ(x))
+```
+
+This makes it possible to use **ODE solvers** together with **affine arithmetic**
+to propagate uncertainties through neural networks.
+
+---
+
+## Affine Arithmetic
+
+Uncertain quantities are represented as:
+
+```
+x = x0 + x1·ε1 + x2·ε2 + ... + xn·εn   ,   εi ∈ [-1, 1]
+```
+
+Here:
+
+* `x0` = central (nominal) value
+* `xi` = deviation coefficients
+* `εi` = noise symbols (shared across computations)
+
+---
+
+## Why Shared Noise Symbols Matter
+
+* **Shared εi across neurons** keeps track of dependencies.
+* This avoids the large over-approximations of plain interval arithmetic.
+* The result: **tighter reachable sets** and **accurate error tracking**.
+
+---
+
+## Visual Intuition
+
+Think of interval arithmetic vs affine arithmetic like this:
+
+```
+Interval arithmetic:
+   [---?---]   [---?---]   [---?---]
+   (each neuron’s uncertainty grows independently → big overestimation)
+
+Affine arithmetic:
+   x0 + x1·ε1 + x2·ε2 ...
+   (uncertainties share εi → dependencies preserved, smaller sets)
+```
+
+Result:
+
+* Interval arithmetic = “bloated boxes”
+* Affine arithmetic   = “tight, correlated tubes”
+
+---
