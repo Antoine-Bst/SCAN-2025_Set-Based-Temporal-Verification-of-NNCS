@@ -18,23 +18,32 @@ make
 Run to compute the reachable tube of a simple robot navigating in a grid of motion primitives:
 ./simulation.out
 
-A small example with a NonLinear closed loop Car model inspired from Dubins model is provided:
-make -> ./simulation.out
+An example with a nonlinear closed-loop car model inspired by the Dubins model is provided:
 
-if it runs:
+```
+make
+./simulation.out
+```
+
+If it runs correctly, you should see output similar to:
+
+```
 ---------------Sequence : 3---------------
----------------Noeud : 0---------------
+---------------Node : 0---------------
 Layer 1: 40 x 3
 Layer 2: 20 x 40
 Layer 3: 2 x 20
 Processing simulation 0 -> result/predicate_3.000.txt, result/jn_box_3.000.txt
 Files saved: result/predicate_3.000.txt, result/jn_box_3.000.txt
+
 ---------------Sequence : 4---------------
----------------Noeud : 0---------------
+---------------Node : 0---------------
 Layer 1: 40 x 3
 Layer 2: 20 x 40
 Layer 3: 2 x 20
-should appears in the terminal as well as reachable sets in /result
+```
+
+The reachable sets will be saved in the /result folder.
 
 =====================================Small Documentation===================================
 The verification is performed in a bottom-up manner using the syntax tree of the formula and the satisfaction signals
