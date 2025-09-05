@@ -1,4 +1,4 @@
-Welcome ! This is a prototype for the verification of STL formula on reachable tube using Dynibex. It has been tested on Linux Ubuntu only.
+Welcome ! This is a prototype for the verification of STL formula on reachable tube of Neural Network Controlled System using Dynibex. It has been tested on Linux Ubuntu only.
 It uses DynIbex.
 
 Install Dynibex:
@@ -12,16 +12,11 @@ If dynibex is a local install add to the make file:
 export PKG_CONFIG_PATH='path_to_dynibex'/share/pkgconfig 
 
 Make the code:
-Open terminal in the CSTL directory and compile using make:
+Open terminal in the directory and compile using make:
 make
 
-Run:
+Run to compute the reachable tube of a simple robot navigating in a grid of motion primitive:
 ./simulation.out
-
-If everything works correctly, the output should be:
-(Satisfaction value, [time interval[)
-(1, [0, 1[)
-([0,1], [1, 10[)
 
 =====================================Small Documentation===================================
 The verification is performed in a bottom-up manner using the syntax tree of the formula and the satisfaction signals
