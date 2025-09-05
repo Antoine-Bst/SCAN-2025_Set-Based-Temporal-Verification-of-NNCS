@@ -45,29 +45,56 @@ Layer 3: 2 x 20
 
 The reachable sets will be saved in the /result folder.
 
-=====================================Small Documentation===================================
-The verification is performed in a bottom-up manner using the syntax tree of the formula and the satisfaction signals
+## STL Formula Verification
 
-phi1 = neg_stl(phi);             // Logical negation: ¬phi
-phi1 = and_stl(phi2, phi3);      // Logical AND: phi2 ∧ phi3
-phi1 = or_stl(phi2, phi3);       // Logical OR: phi2 ∨ phi3
-phi1 = until_stl(phi2, phi3, {t1, t2});  // Until operator: phi2 U[t1,t2] phi3
-phi1 = Finally(phi, {t1, t2});   // Eventually operator: F[t1,t2] phi
-phi1 = Globally(phi, {t1, t2});  // Always operator: G[t1,t2] phi
+Verification is performed bottom-up using the syntax tree of the formula and satisfaction signals.
 
+Supported operators:
 
-predicate_satisfaction(sim, predicates); Constructs satisfaction signals for the list of predicates and the simulation object.
-The output is a list of signals corresponding to each predicate in the input list.
+```
+phi1 = neg_stl(phi);                        // Logical negation: ¬phi
+phi1 = and_stl(phi2, phi3);                 // Logical AND: phi2 ∧ phi3
+phi1 = or_stl(phi2, phi3);                  // Logical OR: phi2 ∨ phi3
+phi1 = until_stl(phi2, phi3, {t1, t2});     // Until operator: phi2 U[t1,t2] phi3
+phi1 = Finally(phi, {t1, t2});              // Eventually operator: F[t1,t2] phi
+phi1 = Globally(phi, {t1, t2});             // Always operator: G[t1,t2] phi
+```
 
-print_Satisf_Signals(phi); Displays the satisfaction signal of a given formula.
-*********************
-This is for Multilayer perceptron (MLP)
-- Weights and file should be store in the same format as given:
-- weight for each line are ponderation of the output of each (layer-1) neurons and similarly for biases proprietary to one neuron in each layer.
-- Activation function for hidden layer can be changed in DnnAff.cpp by commenting or un-commenting each corresponding one, *activation function should be the same in all hidden layers*.
-- Output set is computed from:
-std::vector<Affine2Vector> output = DeepNeuralNetwork_aff(Inputs , ".../weights.txt", ".../biases.txt");
-Inputs should be a vector of Affine form (std::vector<Affine2Vector>) each associated to one input of the NN.
+Predicate satisfaction:
+
+```
+predicate_satisfaction(sim, predicates);
+```
+
+This constructs satisfaction signals for a list of predicates and the simulation object.
+The output is a list of signals corresponding to each predicate.
+
+Display signals:
+
+```
+print_Satisf_Signals(phi);
+```
+
+This displays the satisfaction signal of a given formula.
+
+## Neural Network Details (MLP)
+
+This prototype uses Multilayer Perceptrons (MLP).
+
+* Weights and biases should be stored in the same format as provided examples:
+  Each line of weights corresponds to the connections from the previous layer.
+  Biases are specific to each neuron in a layer.
+
+* The activation function for hidden layers can be changed in DnnAff.cpp by commenting or uncommenting the relevant function.
+  The same activation function must be used in all hidden layers.
+
+* The output set is computed as:
+
+  std::vector<Affine2Vector> output =
+  DeepNeuralNetwork\_aff(Inputs, ".../weights.txt", ".../biases.txt");
+
+Here, Inputs is a vector of affine forms (std::vector<Affine2Vector>), each corresponding to one input of the neural network.
+
 ****************
 Image: Reachable tube of a nonlinear car model driven by a Neural Network in closed loop using Dynibex
 <p align="center">
