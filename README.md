@@ -15,7 +15,7 @@ Make the code:
 Open terminal in the directory and compile using make:
 make
 
-Run to compute the reachable tube of a simple robot navigating in a grid of motion primitive:
+Run to compute the reachable tube of a simple robot navigating in a grid of motion primitives:
 ./simulation.out
 
 A small example with a NonLinear Car model inspired from Dubins model is provided
