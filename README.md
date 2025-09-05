@@ -38,6 +38,9 @@ predicate_satisfaction(sim, predicates); Constructs satisfaction signals for the
 The output is a list of signals corresponding to each predicate in the input list.
 
 print_Satisf_Signals(phi); Displays the satisfaction signal of a given formula.
+
+****************
+Image: Nonlinear car model driven by a Neural Network in closed loop using Dynibex
 <p align="center">
   <img src="NonlinearcarNNCS.png" alt="Nonlinear car NNCS" width="70%">
 </p>
