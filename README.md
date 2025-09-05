@@ -11,6 +11,7 @@ sudo CXXFLAGS="-std=c++14" ./waf install
 If dynibex is a local install add to the make file:
 export PKG_CONFIG_PATH='path_to_dynibex'/share/pkgconfig 
 
+Dynibex_C_STL provide basic tools to verify STL formula on tubes.
 
 An example with a nonlinear closed-loop car model inspired by the Dubins model is provided, as well as a simple robot navigating in a grid of motion primitives:
 
