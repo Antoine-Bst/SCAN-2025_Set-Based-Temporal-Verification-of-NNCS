@@ -33,7 +33,14 @@ predicate_satisfaction(sim, predicates); Constructs satisfaction signals for the
 The output is a list of signals corresponding to each predicate in the input list.
 
 print_Satisf_Signals(phi); Displays the satisfaction signal of a given formula.
-
+*********************
+This is for Multi Layer Perceptron (MLP)
+- Weights and file should be store in the same format as given:
+- weight for each line are ponderation of the output of each (layer-1) neurons and similarly for biases proprietary to one neuron in each layer.
+- Activation function for hidden layer can be changed in DnnAff.cpp by commenting or un-commenting each corresponding one, *activation function should be the same in all hidden layers*.
+- Output set is computed from:
+std::vector<Affine2Vector> output = DeepNeuralNetwork_aff(Inputs , ".../weights.txt", ".../biases.txt");
+Inputs should be a vector of Affine form (std::vector<Affine2Vector>) each associated to one input of the NN.
 ****************
 Image: Reachable tube of a nonlinear car model driven by a Neural Network in closed loop using Dynibex
 <p align="center">
