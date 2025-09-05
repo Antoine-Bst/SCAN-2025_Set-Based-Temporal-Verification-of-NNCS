@@ -18,7 +18,7 @@ make
 Run to compute the reachable tube of a simple robot navigating in a grid of motion primitives:
 ./simulation.out
 
-A small example with a NonLinear closed loop Car model inspired from Dubins model is provided
+A small example with a NonLinear closed loop Car model inspired from Dubins model is provided:
 make -> ./simulation.out
 
 if it runs:
