@@ -11,21 +11,18 @@ sudo CXXFLAGS="-std=c++14" ./waf install
 If dynibex is a local install add to the make file:
 export PKG_CONFIG_PATH='path_to_dynibex'/share/pkgconfig 
 
+
+An example with a nonlinear closed-loop car model inspired by the Dubins model is provided, as well as a simple robot navigating in a grid of motion primitives:
+
 Make the code:
 Open terminal in the directory and compile using make:
-make
-
-Run to compute the reachable tube of a simple robot navigating in a grid of motion primitives:
-./simulation.out
-
-An example with a nonlinear closed-loop car model inspired by the Dubins model is provided:
 
 ```
 make
 ./simulation.out
 ```
 
-If it runs correctly, you should see output similar to:
+If it runs correctly, you should see output similar to (nonlinear car):
 
 ```
 ---------------Sequence : 3---------------
