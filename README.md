@@ -52,7 +52,7 @@ The output is a list of signals corresponding to each predicate in the input lis
 
 print_Satisf_Signals(phi); Displays the satisfaction signal of a given formula.
 *********************
-This is for Multi Layer Perceptron (MLP)
+This is for Multilayer perceptron (MLP)
 - Weights and file should be store in the same format as given:
 - weight for each line are ponderation of the output of each (layer-1) neurons and similarly for biases proprietary to one neuron in each layer.
 - Activation function for hidden layer can be changed in DnnAff.cpp by commenting or un-commenting each corresponding one, *activation function should be the same in all hidden layers*.
