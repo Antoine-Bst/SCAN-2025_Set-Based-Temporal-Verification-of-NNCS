@@ -150,8 +150,8 @@ Think of interval arithmetic vs affine arithmetic like this:
 
 ```
 Interval arithmetic:
-   [---?---]   [---?---]   [---?---]
-   (each neuron’s uncertainty grows independently → big overestimation)
+   [-?-]   [--?--]   [---?---]
+   (each neuron’s uncertainty grows independently from the initial error→ big overestimation)
 
 Affine arithmetic:
    x0 + x1·ε1 + x2·ε2 ...
