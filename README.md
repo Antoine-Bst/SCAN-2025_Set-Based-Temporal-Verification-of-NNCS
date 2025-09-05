@@ -18,6 +18,24 @@ make
 Run to compute the reachable tube of a simple robot navigating in a grid of motion primitive:
 ./simulation.out
 
+A small example with a NonLinear Car model inspired from Dubins model is provided
+make -> ./simulation.out
+
+if it runs:
+---------------Sequence : 3---------------
+---------------Noeud : 0---------------
+Layer 1: 40 x 3
+Layer 2: 20 x 40
+Layer 3: 2 x 20
+Processing simulation 0 -> result/predicate_3.000.txt, result/jn_box_3.000.txt
+Files saved: result/predicate_3.000.txt, result/jn_box_3.000.txt
+---------------Sequence : 4---------------
+---------------Noeud : 0---------------
+Layer 1: 40 x 3
+Layer 2: 20 x 40
+Layer 3: 2 x 20
+should appears in the terminal as well as reachable sets in /result
+
 =====================================Small Documentation===================================
 The verification is performed in a bottom-up manner using the syntax tree of the formula and the satisfaction signals
 
