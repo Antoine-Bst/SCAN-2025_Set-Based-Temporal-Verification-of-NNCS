@@ -142,7 +142,7 @@ Here:
 
 Image: Architecture of set propagation
 <p align="center">
-  <img src="propagation.png" alt="Set propagation" width="70%">
+  <img src="schematic.png" alt="Set propagation" width="70%">
 </p>
 
 ---
