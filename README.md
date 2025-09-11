@@ -140,7 +140,7 @@ Here:
 * This avoids the large over-approximations of plain interval arithmetic.
 * The result: **tighter reachable sets** and **accurate error tracking**.
 
-Image: Architecture of set propagation
+Image: Architecture of affine propagation
 <p align="center">
   <img src="schematic.png" alt="Set propagation" width="70%">
 </p>
