@@ -86,7 +86,7 @@ This prototype uses Multilayer Perceptrons (MLP).
 * The activation function for hidden layers can be changed in DnnAff.cpp by commenting or uncommenting the relevant function.
   The same activation function must be used in all hidden layers.
 
-* The output set is computed as:
+* The output set is computed as (see NN_Simple_Example):
 ```
   std::vector<Affine2Vector> output =
   DeepNeuralNetwork\_aff(Inputs, ".../weights.txt", ".../biases.txt");
