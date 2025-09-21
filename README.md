@@ -160,6 +160,11 @@ Affine arithmetic:
    x0 + x1·ε1 + x2·ε2 ...
    (uncertainties share εi → dependencies preserved, smaller sets)
 ```
+Image: Computed Zonotope vs MonteCarlo point cloud
+<p align="center">
+  <img src="zonotope.png" alt="Output set approximation for a 20x40 MLP vs MonteCarlo point cloud" width="70%">
+</p>
+
 
 Result:
 
